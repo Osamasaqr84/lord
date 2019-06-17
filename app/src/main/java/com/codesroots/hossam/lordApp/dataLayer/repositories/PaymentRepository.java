@@ -1,5 +1,6 @@
 package com.codesroots.hossam.lordApp.dataLayer.repositories;
 
+import android.arch.lifecycle.MutableLiveData;
 import android.support.v4.util.Consumer;
 import android.util.Log;
 
@@ -29,34 +30,33 @@ public class PaymentRepository {
         this.apiService = apiService;
     }
 
-    public void addOrder(List<ProductModel> ProductModels) {
+    public void addOrder(List<ProductModel> ProductModels, MutableLiveData<Boolean> saveResultLiveData, MutableLiveData<Throwable> errorLiveData) {
 
         apiService.makeOrderProduct(ProductModels).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, final Response<ResponseBody> response) {
                 if (response.body() != null) {
                     if (response.isSuccessful()) {
-                        if (onSuccess != null) {
-                            onSuccess.accept(true);
+                        if (saveResultLiveData != null) {
+                            saveResultLiveData.postValue(true);
                         }
                     }
                     else {
                         // TODO: return error
-                        if (onError != null) {
-                            onError.accept(new Exception());
+                        if (errorLiveData != null) {
+                            errorLiveData.postValue(new Exception());
                         }
                     }
-                    // TODO: return error
-                    if (onError != null) {
-                        onError.accept(new Exception());
+                    if (errorLiveData != null) {
+                        errorLiveData.postValue(new Exception());
                     }
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                if (onError != null) {
-                    onError.accept(t);
+                if (errorLiveData != null) {
+                    errorLiveData.postValue(t);
                 }
             }
         });

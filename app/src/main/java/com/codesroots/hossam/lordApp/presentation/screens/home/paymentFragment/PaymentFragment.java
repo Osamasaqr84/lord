@@ -16,7 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.codesroots.hossam.lordApp.helper.PreferenceHelper;
 import com.codesroots.hossam.lordApp.presentation.screens.home.HomeActivity;
@@ -39,15 +41,11 @@ import java.util.Objects;
 
 public class PaymentFragment extends Fragment {
 
-
-    public PaymentFragment() {
-        // Required empty public constructor
-    }
-
     List<ProductInfoToPost> productList;
     ArrayList<ProductModel> ProductModels = new ArrayList<>();
     PaymentViewModel paymentViewModel;
     int paymentway, userid;
+    private ProgressBar progbare1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,10 +60,9 @@ public class PaymentFragment extends Fragment {
         userid = PreferenceHelper.getUserId();
         ((HomeActivity) Objects.requireNonNull(getActivity())).title.setText(getText(R.string.paymenpage));
         paymentViewModel = ViewModelProviders.of(this, getViewModelFactory()).get(PaymentViewModel.class);
-        notification();
         assert getArguments() != null;
         productList = getArguments().getParcelableArrayList("products");
-
+        progbare1 = view.findViewById(R.id.progbare1);
         for (int i = 0; i < productList.size(); i++) {
             Log.i("forin", "showDialog: hossam");
             ProductModels.add(new ProductModel(userid, getArguments().getInt("storid"), productList.get(i).getProductId(),
@@ -77,8 +74,10 @@ public class PaymentFragment extends Fragment {
         }
 
         paymentViewModel.saveData(ProductModels);
+
         paymentViewModel.saveResultLiveData.observe(this, aBoolean ->
                 {
+                    progbare1.setVisibility(View.GONE);
                     if (aBoolean) {
                         FragmentManager fm = getFragmentManager();
                         for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
@@ -86,9 +85,15 @@ public class PaymentFragment extends Fragment {
                         }
                         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new MainFragment()).addToBackStack(null).commit();
                         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FinishOrderFragment()).addToBackStack(null).commit();
-                    }
-                    else
+                    } else
                         Snackbar.make(view, getText(R.string.erroroccur), Snackbar.LENGTH_LONG).show();
+                }
+        );
+
+        paymentViewModel.errorLiveData.observe(this, throwable ->
+                {
+                    progbare1.setVisibility(View.GONE);
+                    Toast.makeText(getActivity(), getText(R.string.erroroccur), Toast.LENGTH_SHORT).show();
                 }
         );
         return view;
@@ -97,28 +102,6 @@ public class PaymentFragment extends Fragment {
     @NonNull
     private ViewModelProvider.Factory getViewModelFactory() {
         return new AllStoresViewModelFactory(getActivity().getApplication());
-    }
-
-
-    ////////////////////Notification
-    private void notification() {
-        OneSignal.startInit(getActivity())
-                .setNotificationOpenedHandler(new ExampleNotificationOpenedHandler())
-                .init();
-        OneSignal.enableSound(true);
-
-        OneSignal.sendTag("id", String.valueOf(PreferenceHelper.getUserId()));
-        OneSignal.sendTag("user_group_id", String.valueOf(PreferenceHelper.getUSER_GROUP_ID()));
-        OneSignal.sendTag("store_id","0");
-    }
-
-    private class ExampleNotificationOpenedHandler implements OneSignal.NotificationOpenedHandler {
-
-
-        @Override
-        public void notificationOpened(OSNotificationOpenResult result) {
-
-        }
     }
 
 }

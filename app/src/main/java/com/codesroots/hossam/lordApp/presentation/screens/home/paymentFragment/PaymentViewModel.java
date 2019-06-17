@@ -24,16 +24,12 @@ public class PaymentViewModel extends ViewModel {
 
     public void saveData (List<ProductModel> ProductModels)
     {
-
-        paymentRepository.addOrder(ProductModels);
-
+        paymentRepository.addOrder(ProductModels,saveResultLiveData,errorLiveData);
     }
 
     public void saveDataFromGoogle (List<ProductModel> ProductModels,MultipartBody.Part file)
     {
-
         paymentRepository.addOrderFromGoogle(ProductModels,file);
-
     }
 
     public PaymentViewModel(final PaymentRepository paymentRepository) {
