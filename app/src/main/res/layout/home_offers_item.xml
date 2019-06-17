@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginRight="7dp"
+    android:layout_marginLeft="7dp"
+    android:layout_marginBottom="25dp"
+    android:background="@drawable/linear_background_for_rate"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05"
+        />
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.9"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/guid"
+                app:layout_constraintHeight_percent="0.50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/morerate"/>
+
+            <TextView
+                android:id="@+id/item_storename"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="5dp"
+                android:lines="1"
+                app:layout_constraintHeight_percent="0.15"
+                android:ellipsize="end"
+                app:layout_constraintTop_toBottomOf="@+id/item_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/red"
+                android:layout_marginRight="5dp"
+                android:text="متجر الاحلام"
+                android:layout_gravity="start|center_vertical" />
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:lines="1"
+                app:layout_constraintHeight_percent="0.15"
+                android:ellipsize="end"
+                android:paddingStart="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/item_storename"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="ايفون ابيض"
+                android:gravity="center"
+               />
+
+                <TextView
+                    android:id="@+id/item_oldprice"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginRight="2dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    app:layout_constraintHeight_percent="0.15"
+                    android:ellipsize="end"
+                    app:layout_constraintTop_toBottomOf="@+id/item_name"
+                    android:layout_gravity="start"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintWidth_percent="0.5"
+                    android:text="155"
+                    android:textColor="@color/gray" />
+
+                <TextView
+                    android:id="@+id/item_newprice"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintHeight_percent="0.15"
+                    app:layout_constraintWidth_percent="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/item_name"
+                    android:layout_gravity="end"
+                    android:text="120"
+                    android:textColor="@color/gray" />
+
+    </android.support.constraint.ConstraintLayout>

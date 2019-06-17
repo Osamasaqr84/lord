@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/linear_background_for_delivery_offers">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.40" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.37" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.43" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidlinevertical3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.63" />
+
+        <ImageView
+            android:id="@+id/deliver_img"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/person"
+            app:layout_constraintEnd_toStartOf="@id/guidline1"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guidline2" />
+
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:contentDescription="TODO"
+            android:padding="7dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mark"
+            app:layout_constraintStart_toEndOf="@id/guidline3"
+            app:layout_constraintTop_toTopOf="@id/deliver_img" />
+
+
+        <RatingBar
+            android:id="@+id/rates"
+            style="@style/StarRatingBars"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:isIndicator="true"
+            android:rating="5"
+            app:layout_constraintStart_toEndOf="@id/guidline3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deliver_img" />
+
+        <TextView
+            android:id="@+id/ratecount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:gravity="center"
+            android:text="(120)"
+            android:textColor="@color/gray"
+            app:layout_constraintStart_toEndOf="@id/rates"
+            app:layout_constraintTop_toBottomOf="@+id/deliver_img" />
+
+
+        <TextView
+          android:id="@+id/deliverycomments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:autoLink="all"
+            android:linksClickable="true"
+            android:clickable="true"
+            android:text="تعليقات المندوب"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/guidline6"
+            app:layout_constraintStart_toEndOf="@id/guidline3"
+            app:layout_constraintTop_toBottomOf="@+id/rates" />
+
+
+        <View
+            android:id="@+id/viewvertical"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#D9D9D9"
+            app:layout_constraintStart_toEndOf="@id/deliver_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#D9D9D9"
+            app:layout_constraintStart_toEndOf="@id/deliver_img"
+            app:layout_constraintTop_toBottomOf="@+id/guidline4" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.40" />
+
+        <TextView
+            android:id="@+id/capitainname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="اسم الكابتن : "
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/guidline4"
+            app:layout_constraintStart_toEndOf="@+id/guidline11"
+            app:layout_constraintTop_toBottomOf="@+id/guidline2" />
+
+
+        <TextView
+            android:id="@+id/capitainnamevalue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="  اسامه عبدالمنعم  "
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/guidline4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/capitainname"
+            app:layout_constraintTop_toBottomOf="@+id/guidline2" />
+
+
+        <ImageView
+            android:id="@+id/spaceimg"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:background="@drawable/paratrooper"
+            app:layout_constraintBottom_toTopOf="@+id/guidlinevertical3"
+            app:layout_constraintStart_toEndOf="@+id/guidline11"
+            app:layout_constraintTop_toBottomOf="@+id/guidline5" />
+
+
+        <TextView
+            android:id="@+id/home_end_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:gravity="start"
+            android:hint="2.4 كم "
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidlinevertical3"
+            app:layout_constraintStart_toEndOf="@+id/spaceimg"
+            app:layout_constraintTop_toBottomOf="@+id/guidline5" />
+
+
+        <ImageView
+            android:id="@+id/cost"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:background="@drawable/coins"
+            app:layout_constraintStart_toEndOf="@+id/guidline11"
+            app:layout_constraintTop_toBottomOf="@+id/guidlinevertical3" />
+
+
+        <TextView
+            android:id="@+id/costvalue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:gravity="start"
+            android:hint="34 ر.س  "
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="#969696"
+            android:textSize="13dp"
+            app:layout_constraintStart_toEndOf="@+id/spaceimg"
+            app:layout_constraintTop_toBottomOf="@+id/guidlinevertical3" />
+
+
+        <TextView
+            android:id="@+id/accept"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/addtocart_back"
+            android:gravity="center"
+            android:lines="1"
+            android:text="  موافق"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidline11"
+            app:layout_constraintWidth_percent="0.35" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

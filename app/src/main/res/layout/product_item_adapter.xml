@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class ="ProductDataBindings">
+        <variable
+            name="productdata"
+            type="com.codesroots.hossam.lordApp.presentation.screens.home.productsFragment.ProductsViewModel"/>
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layoutDirection="rtl"
+        android:orientation="horizontal"
+        android:id="@+id/productview"
+        android:background="@drawable/linear_background_for_subcat"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidlinehorizental1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.04"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidvertical1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidvertical4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"
+            />
+
+        <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/guidlinetop2"
+            app:layout_constraintGuide_percent="0.50"
+            />
+        <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/guidlinetop"
+            app:layout_constraintGuide_percent="0.62"
+            />
+
+        <ImageView
+            android:id="@+id/item_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toBottomOf="@+id/guidlinehorizental1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/mobile"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/guidlinetop2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            >
+
+            <RatingBar
+                android:id="@+id/rates"
+                style="@style/StarRatingBars"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="2dp"
+                android:rating="5"
+                android:isIndicator="true" />
+
+            <TextView
+                android:id="@+id/ratesvalues"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="(120)"
+                android:textColor="@color/gray"
+                app:layout_constraintStart_toEndOf="@id/rates"
+                app:layout_constraintTop_toBottomOf="@+id/item_img" />
+
+        </LinearLayout>
+
+
+
+        <View
+            android:id="@+id/vieww"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@+id/guidlinetop"
+            android:background="#D9D9D9"/>
+
+        <TextView
+            android:id="@+id/item_description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:lines="2"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:textSize="@dimen/product_name"
+            app:layout_constraintHeight_percent="0.12"
+            android:layout_marginStart="2dp"
+            app:layout_constraintTop_toBottomOf="@+id/vieww"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="#4A4A4A"
+            android:text="@{productdata.name}"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="5.849.00 ريال "
+            android:textSize="14dp"
+            android:id="@+id/item_price"
+            app:layout_constraintTop_toBottomOf="@+id/item_description"
+            app:layout_constraintStart_toStartOf="parent"
+            android:lines="2"
+            android:ellipsize="end"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintHeight_percent="0.1"
+            android:gravity="center"
+            android:layout_gravity="end"
+            android:textColor="#4A4A4A"
+            />
+
+        <TextView
+            android:id="@+id/item_charge"
+            android:layout_width="0dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintWidth_percent="0.45"
+            android:layout_height="wrap_content"
+            app:layout_constraintHeight_percent="0.05"
+            android:text="شحن مجاني "
+            android:gravity="center"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_price"
+            app:layout_constraintTop_toBottomOf="@+id/item_description"
+            app:layout_constraintBottom_toBottomOf="@+id/item_price"
+            android:background="@drawable/salefromstor_back"
+            android:padding="2dp"
+            />
+
+        <ImageView
+            android:id="@+id/favorite"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:src="@drawable/favicon"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"
+           app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+
+        <RelativeLayout
+            android:id="@+id/addtoCart"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_price"
+            android:background="@drawable/addtocart_back"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="7dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.6"
+            >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/addtocart"
+                android:maxLines="2"
+                android:layout_marginStart="2dp"
+                android:ellipsize="end"
+                android:textSize="12dp"
+                android:textColor="@color/black"
+                />
+
+            <ImageView
+                android:id="@+id/ivSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cart"
+                android:layout_toStartOf="@+id/title"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

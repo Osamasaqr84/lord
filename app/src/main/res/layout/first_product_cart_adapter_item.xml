@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class ="UserCartBinding">
+        <variable
+            name="cartmodel"
+            type="com.codesroots.hossam.lordApp.presentation.screens.home.userCartFragment.UserCartViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/linear_background_for_photographer"
+    >
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guid23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.40"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidvertical2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.42"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidvertical32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.48"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/guidverticallast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/guidvertical22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/guidhorizental3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.04"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidhorizental33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.80"
+            />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/gray"
+            app:layout_constraintStart_toEndOf="@+id/viewvertical1"
+            app:layout_constraintTop_toBottomOf="@+id/guidhorizental33" />
+
+
+        <View
+            android:id="@+id/viewvertical1"
+            android:layout_width="1dp"
+            android:layout_height="200dp"
+            android:background="@color/gray"
+            app:layout_constraintStart_toEndOf="@+id/guid23" />
+
+
+        <ImageView
+            android:id="@+id/item_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mobile"
+            app:imageUrl="@{cartmodel.imagepath}"
+            app:layout_constraintEnd_toEndOf="@+id/guid23"
+            app:layout_constraintHeight_percent="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guidhorizental3"
+            app:layout_constraintWidth_percent="0.3" />
+
+
+        <RatingBar
+            android:id="@+id/rates"
+            style="@style/StarRatingBars"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:isIndicator="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:rating="@{cartmodel.rateStart}"
+            app:layout_constraintStart_toEndOf="@+id/vertical1"
+            app:layout_constraintTop_toBottomOf="@+id/guidhorizental33" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/vertical1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"
+
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:lines="1"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guid23"
+            app:layout_constraintTop_toBottomOf="@+id/guidhorizental33"
+            app:layout_constraintStart_toEndOf="@id/rates"
+            android:text="@{cartmodel.retecount}"
+            android:textSize="11dp"
+            android:textColor="@color/gray" />
+
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintHeight_percent="0.30"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="3"
+            android:padding="1dp"
+            android:text="@{cartmodel.name}"
+            android:textColor="#4A4A4A"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidvertical2"
+            app:layout_constraintTop_toBottomOf="@+id/guidhorizental3"
+        />
+
+
+        <TextView
+            android:id="@+id/item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4A4A4A"
+            android:ellipsize="end"
+            app:layout_constraintWidth_percent="0.30"
+            android:maxLines="2"
+            android:text="@{cartmodel.price}"
+            android:textSize="15dp"
+            app:layout_constraintStart_toEndOf="@+id/guidvertical2"
+            app:layout_constraintTop_toBottomOf="@+id/item_name" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=" (ثمن القطعةالواحدة)"
+            android:textColor="#BE0B21"
+            android:maxLines="2"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:ellipsize="end"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/item_price"
+            app:layout_constraintTop_toBottomOf="@+id/item_name" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.28"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:background="@drawable/salefromstor_back"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="@string/charge"
+            android:textColor="#4A4A4A"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidhorizental33"
+            app:layout_constraintStart_toEndOf="@+id/guidvertical2"
+            app:layout_constraintTop_toBottomOf="@+id/item_price" />
+
+        <TextView
+            android:id="@+id/delete_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:background="@drawable/delete_back"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="حذف "
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidhorizental33"
+            app:layout_constraintEnd_toEndOf="@+id/guidverticallast"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/item_price"
+            app:layout_constraintWidth_percent="0.25" />
+
+
+        <ImageView
+            android:id="@+id/quintityPlus"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/plus"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidvertical32"
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+      />
+
+        <EditText
+            android:id="@+id/quintity_value"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:layout_constraintWidth_percent="0.25"
+            android:background="@drawable/linear_background_cart_quntity"
+            android:gravity="center"
+            android:inputType="number"
+            android:ellipsize="end"
+            android:enabled="false"
+            android:lines="1"
+            android:text="@{cartmodel.quentity}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/quintityPlus"
+            app:layout_constraintTop_toTopOf="@+id/guidhorizental33" />
+
+
+        <ImageView
+            android:id="@+id/quintityMinus"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/minus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/guidverticallast"
+            app:layout_constraintStart_toEndOf="@+id/quintity_value"
+            app:layout_constraintTop_toTopOf="@+id/guidhorizental33"
+            app:layout_constraintWidth_percent="0.07" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

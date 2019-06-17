@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/logo"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/parashot"
+        />
+
+    <ImageView
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:src="@drawable/lineview"
+        />
+    <ImageView
+        android:id="@+id/leftside"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        android:src="@drawable/view1"
+        />
+    <ImageView
+        android:id="@+id/rightside"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        android:src="@drawable/view2"
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="  حساب التاجر"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        app:layout_constraintEnd_toEndOf="@id/leftside"
+        app:layout_constraintStart_toStartOf="@id/rightside"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:src="@drawable/lineview"/>
+
+</android.support.constraint.ConstraintLayout>

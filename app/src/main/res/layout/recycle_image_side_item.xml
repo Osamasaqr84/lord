@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:background="@drawable/linear_background_for_sideimg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_height="90dp"
+        android:layout_width="0dp"
+        android:padding="15dp"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="7dp"
+        android:id="@+id/ivGallery"
+        android:src="@drawable/mobile"
+        android:scaleType="fitXY"
+        />
+    
+</android.support.constraint.ConstraintLayout>

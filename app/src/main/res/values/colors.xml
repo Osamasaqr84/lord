@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FB7700</color>
+    <color name="colorPrimaryDark">#fb771e</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffffff</color>
+    <color name="gray">#ff808080</color>
+    <color name="black">#000</color>
+    <color name="viewcolor">#EDF0F2</color>
+    <color name="textcolorinnenu">#ff808080</color>
+    <color name="pink">#E6EAED</color>
+    <color name="red">#ef1919</color>
+    <color name="shape">#E6EAED</color>
+    <color name="blue">#1e75de</color>
+    <color name="fbcolor">#4A70B7</color>
+    <color name="text_blue">#2F7BBF</color>
+    <color name="slider_home3">#490D39</color>
+    <color name="back_home3">#FCF6F6</color>
+    <color name="notfy_home3">#DC214C</color>
+    <color name="text_numbers">#DC214C</color>
+    <color name="colortwo">#DC214C</color>
+    <color name="colorbackinorderconf">#D91368</color>
+    <color name="maptextcolor">#FB7700</color>
+    <color name="darkgrey">#514F4F</color>
+    <color name="lightPurple">#D482DF</color>
+    <color name="chatbackforsender">#E7EBEE</color>
+    <color name="chatback">#FBF5F5</color>
+    <color name="backhome">#F4F4F4</color>
+    <color name="backinstores">#3D002A</color>
+    <color name="backinsendmessage">#E6EAEB</color>
+    <color name="backinsenfreedelivery">#FFCF00</color>
+
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="item_name">#0c0c0c</color>
+    <color name="description">#1a1a1a</color>
+    <color name="chef">#777</color>
+    <color name="timestamp">#777</color>
+
+</resources>

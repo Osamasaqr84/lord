@@ -1,0 +1,225 @@
+<android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/linear_background_for_photographer"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guid23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidvertical2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidverticallast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/guidvertical22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/guidhorizental3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidhorizental33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"
+        />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/gray"
+        app:layout_constraintStart_toEndOf="@+id/viewvertical1"
+        app:layout_constraintTop_toBottomOf="@+id/guidhorizental33" />
+
+
+    <View
+        android:id="@+id/viewvertical1"
+        android:layout_width="1dp"
+        android:layout_height="180dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toEndOf="@+id/guid23" />
+
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/camera"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toEndOf="@+id/guidvertical22"
+        app:layout_constraintTop_toBottomOf="@+id/guidhorizental3"
+        app:layout_constraintWidth_percent="0.40" />
+
+
+    <RatingBar
+        android:id="@+id/rates"
+        style="@style/StarRatingBars"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:isIndicator="true"
+        android:rating="5"
+        app:layout_constraintStart_toEndOf="@+id/vertical1"
+        app:layout_constraintTop_toBottomOf="@+id/guidhorizental33" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09"
+
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:lines="1"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toStartOf="@+id/guid23"
+        app:layout_constraintTop_toBottomOf="@+id/guidhorizental33"
+        app:layout_constraintStart_toEndOf="@id/rates"
+        android:text="(120)"
+        android:textSize="11dp"
+        android:textColor="@color/gray" />
+
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="12dp"
+        android:textColor="#4A4A4A"
+        android:autoLink="all"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/guid23"
+        app:layout_constraintStart_toEndOf="@+id/vertical1"
+        app:layout_constraintTop_toBottomOf="@+id/rates"
+        android:clickable="true"
+        android:text="تقييم المصور"
+        />
+
+
+    <TextView
+        android:id="@+id/photographer_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lines="1"
+        app:layout_constraintWidth_percent="0.15"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@+id/guidhorizental3"
+        android:padding="1dp"
+        android:textStyle="bold"
+        android:text="@string/photographer"
+        android:textColor="#4A4A4A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/guidvertical2" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text=" احمد زكريا عبدالتواب"
+        android:textColor="#4A4A4A"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/photographer_name"
+        app:layout_constraintTop_toBottomOf="@+id/guidhorizental3" />
+
+
+    <TextView
+        android:id="@+id/photographer_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@+id/photographer_name"
+        android:padding="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guidhorizental33"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="نبذة مختصرة عن المصورنبذة مختصرة عن المصورنبذة مختصرة عن المصورنبذة مختصرة عن المصورنبذة مختصرة عن المصورنبذة مختصرة عن المصور"
+        android:textColor="#4A4A4A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/guidvertical2" />
+
+
+
+    <TextView
+        android:id="@+id/photoimgs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintWidth_percent="0.15"
+        android:text="@string/img_num"
+        android:textColor="#969696"
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="@+id/photographer_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="start"
+        android:text="450"
+        android:textColor="@color/red"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/photoimgs"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:background="@drawable/accept_background"
+        android:gravity="center"
+        android:lines="1"
+        android:text="@string/chat"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidverticallast"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintWidth_percent="0.2" />
+
+</android.support.constraint.ConstraintLayout>

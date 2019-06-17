@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/choose_place"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/linear_background_in_confirm_order"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/guidlinehorizental"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/guidline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85"
+            />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="38dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.9"
+            android:background="@drawable/clock"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/guidline2"
+            app:layout_constraintTop_toBottomOf="@+id/guidlinehorizental" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/deliverythrough"
+            style="@style/SpinnerTheme"
+            android:padding="5dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:gravity="start"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/guidline4"
+            app:layout_constraintStart_toEndOf="@+id/guidline3"
+             />
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

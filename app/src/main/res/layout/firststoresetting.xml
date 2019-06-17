@@ -1,0 +1,170 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_home3"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+  >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/header_for_storesetting"/>
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="7dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/linear_background_for_subcat"
+            app:layout_constraintTop_toTopOf="@+id/head1" >
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/code"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4jisdfdds"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="5dp"
+                    android:textSize="15dp"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/sale"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:onClick="copycode"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/copy"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+        <include layout="@layout/card_store_info_in_store_setting"
+          />
+        <include layout="@layout/second_card_instoresetting"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/productimages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="29dp"
+            android:gravity="center"
+            android:background="@drawable/linear_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/storedepart"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="3dp"
+                android:textSize="14dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="12dp"
+                android:layout_gravity="start"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="قسم المتاجر"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="3dp"
+                android:textSize="14dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="12dp"
+                android:layout_gravity="start"/>
+
+            </LinearLayout>
+
+             <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:weightSum="1"
+                android:padding="4dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="7dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:text="@string/changestoredepart"
+                    android:gravity="center"
+                    android:layout_weight="0.6"
+                    android:textColor="@color/white"
+                    android:background="@drawable/change_storename_back"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:text="حفظ"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_gravity="start"
+            android:background="@drawable/save_back"
+            android:padding="2dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

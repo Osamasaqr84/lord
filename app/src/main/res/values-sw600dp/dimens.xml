@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_width">120dp</dimen>
+    <dimen name="chat_message">17sp</dimen>
+    <dimen name="chat_time">13dp</dimen>
+    <dimen name="time_in_chat">8dp</dimen>
+    <dimen name="product_name">16sp</dimen>
+
+</resources>

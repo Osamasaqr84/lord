@@ -1,0 +1,543 @@
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="5dp"
+    android:layout_height="match_parent"
+    >
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            >
+
+            <include
+                android:id="@+id/header_for_productdetails"
+                layout="@layout/header_for_productdetails"
+                android:layout_width="match_parent"
+                android:layout_height="63dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidlineright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.03"
+                android:orientation="vertical"
+                />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/addtoCartlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                app:layout_constraintTop_toBottomOf="@+id/header_for_productdetails"
+                android:layout_margin="7dp"
+                android:background="@drawable/linear_background_for_subcat"
+                >
+
+
+                <ImageView
+                    android:id="@+id/menu"
+                    android:layout_width="45dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/order"
+                    />
+                <TextView
+                    android:id="@+id/cart_count"
+                    android:layout_width="20dp"
+                    android:layout_height="22sp"
+                    app:layout_constraintStart_toStartOf="@+id/menu"
+                    app:layout_constraintTop_toTopOf="@+id/menu"
+                    android:text="3"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/productcounttext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="لديك الان 3 منتجات بالسلة"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    app:layout_constraintStart_toEndOf="@id/menu"
+                    app:layout_constraintEnd_toStartOf="@id/sale"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/sale"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:text="شراء"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintWidth_percent="0.3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/addtocart_back"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/linear_background_for_sideimg"
+                app:layout_constraintStart_toEndOf="@id/guidlineright"
+                app:layout_constraintTop_toBottomOf="@+id/addtoCartlayout"
+                app:layout_constraintWidth_percent="0.72" />
+
+
+
+            <ImageView
+                android:id="@+id/imageZoom"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="start"
+                android:layout_margin="7dp"
+                android:src="@drawable/search"
+                app:layout_constraintEnd_toEndOf="@id/viewpager"
+                app:layout_constraintTop_toTopOf="@+id/viewpager" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recylerviewimages"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="5dp"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addtoCartlayout"
+                app:layout_constraintWidth_percent="0.22" />
+
+            <ImageView
+                android:id="@+id/showmore"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/more_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/viewpager"
+                app:layout_constraintTop_toBottomOf="@+id/recylerviewimages" />
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/itemdetailslayout"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.95"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/linear_background"
+                app:layout_constraintTop_toBottomOf="@+id/viewpager"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/notification_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="هواوي نوفا  i3بشريحتي اتصال "
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintWidth_percent="0.6" />
+
+                <RatingBar
+                    android:id="@+id/rates"
+                    style="@style/StarRatingBars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
+                    android:rating="5"
+                    android:layout_marginStart="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/notification_text"
+                    android:isIndicator="true" />
+
+                <TextView
+                    android:id="@+id/ratesnum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/notification_text"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/rates"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="3dp"
+                    android:text="(120)"
+                    android:textColor="@color/gray"
+                    app:layout_constraintStart_toEndOf="@+id/rates" />
+
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="5.849.00 ريال"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/notification_text"
+                    app:layout_constraintWidth_percent="0.37" />
+
+
+                <TextView
+                    android:id="@+id/charg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/charge"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/notification_text"
+                    app:layout_constraintWidth_percent="0.4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textSize="10dp"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:layout_gravity="end"
+                    android:background="@drawable/salefromstor_back"
+                    />
+
+                <ImageView
+                    android:id="@+id/favorite"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/favicon"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintTop_toBottomOf="@+id/item_price"
+                    app:layout_constraintBottom_toBottomOf="@+id/charg"
+                    app:layout_constraintEnd_toStartOf="@id/charg"
+                    />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/colorlayout"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.95"
+                android:layout_marginTop="10dp"
+                android:padding="3dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/linear_background"
+                app:layout_constraintTop_toBottomOf="@+id/itemdetailslayout"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/choicecolortxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:text="@string/choice_color"
+                    android:textSize="16dp"
+                    />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintWidth_percent="0.9"
+                    app:layout_constraintTop_toBottomOf="@+id/choicecolortxt"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    android:id="@+id/recylerviewcolors">
+                </android.support.v7.widget.RecyclerView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/storagelayout"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.95"
+                android:layout_marginTop="10dp"
+                android:padding="3dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/linear_background"
+                app:layout_constraintTop_toBottomOf="@+id/colorlayout"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/spacetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_marginStart="9dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:text="@string/storge"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/spacetxt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintWidth_percent="0.9"
+                    android:orientation="horizontal"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    android:id="@+id/recylerviewstorage">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/descriptionlayout"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.95"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:padding="3dp"
+                android:background="@drawable/linear_background"
+                app:layout_constraintTop_toBottomOf="@+id/storagelayout"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/descriptiontxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start"
+                    android:text="@string/description"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintWidth_percent="0.92"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptiontxt"
+                    android:padding="5dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:text="يحتوي هاتف انفنكس علي شاشة لمس تكاثفية حجمها 5.5 انش ومذودة ومذودة بتقنية اي بي سي"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/item_details"
+                android:layout_width="0dp"
+                android:background="@drawable/linear_background"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:padding="3dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.95"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionlayout"
+
+                >
+                <TextView
+                    android:id="@+id/item_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_marginStart="9dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:text="@string/product_description"
+                    />
+
+                <TextView
+                    android:id="@+id/item_detailsvalues"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintWidth_percent="0.92"
+                    android:gravity="start|center_vertical"
+                    android:text="دقة الكاميرا 5 ميجا بكسل"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:lines="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/item_description" />
+
+                <ImageView
+                    android:id="@+id/gotodet"
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintTop_toTopOf="@+id/item_detailsvalues"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_details"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/prev" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/stor_and_marka_details"
+                android:layout_width="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.95"
+                android:background="@drawable/linear_background"
+                app:layout_constraintTop_toBottomOf="@+id/item_details"
+                android:layout_height="wrap_content">
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guidlinevertical1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05"
+                    />
+                <TextView
+                    android:id="@+id/marka_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/guidlinevertical1"
+                    app:layout_constraintWidth_percent="0.4"
+                    android:layout_weight="1"
+                    android:textColor="@color/textcolorinnenu"
+                    android:text="@string/marka_name"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintWidth_percent="0.4"
+                    android:textSize="16dp"
+                    android:textColor="@color/textcolorinnenu"
+                    android:text="@string/store_name"
+                    />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guidlinevertical2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.2"
+                    />
+
+                <TextView
+                    android:id="@+id/markaname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="هواوي"
+                    android:textColor="@color/textcolorinnenu"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/guidlinevertical2"
+                    app:layout_constraintTop_toBottomOf="@+id/marka_name"
+                    app:layout_constraintWidth_percent="0.4" />
+
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guidlinevertical3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.7"
+                    />
+                <TextView
+                    android:id="@+id/storename"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    app:layout_constraintStart_toEndOf="@+id/guidlinevertical3"
+                    android:text="متجر الاحلام  "
+                    android:textColor="@color/textcolorinnenu"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/marka_name"
+                    app:layout_constraintWidth_percent="0.3 " />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/addtoCart"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_alignParentTop="true"
+                android:drawableStart="@drawable/cart"
+                app:layout_constraintTop_toBottomOf="@+id/stor_and_marka_details"
+                android:background="@drawable/addtocart_back"
+                android:layout_marginTop="7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.5"
+                >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/addtocart"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textColor="@color/black"
+                    />
+
+                <ImageView
+                    android:id="@+id/ivSetting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cart"
+                    android:layout_toStartOf="@+id/title"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    />
+
+            </RelativeLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout android:id="@+id/doctorlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/linear_background_for_rate"
+    android:layout_margin="5dp"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <ImageView
+            android:id="@+id/itemimage"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintHeight_percent="0.75"
+            android:padding="4dp"
+            android:src="@drawable/pharma"
+            />
+
+        <TextView
+            android:id="@+id/itemtxt"
+            android:maxLines="1"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintTop_toBottomOf="@+id/itemimage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center_vertical|center"
+            android:textColor="@color/black"
+            android:text="مطاعم "
+            android:textSize="14dp"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+

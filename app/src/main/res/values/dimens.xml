@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin">5dp</dimen>
+    <dimen name="textsizeinblood">14sp</dimen>
+    <dimen name="textsizeinmenu">12sp</dimen>
+    <dimen name="linearheight">65dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="menu_text">16sp</dimen>
+    <dimen name="menuimg_height">30dp</dimen>
+    <dimen name="menuimg_width">30dp</dimen>
+    <dimen name="imagefooterwidth">40dp</dimen>
+    <dimen name="imagefooterheight">40dp</dimen>
+    <dimen name="image_width">80dp</dimen>
+
+    <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+         https://developer.android.com/design/patterns/navigation-drawer.html -->
+    <dimen name="navigation_drawer_width">240dp</dimen>
+    <dimen name="chat_message">14sp</dimen>
+    <dimen name="chat_time">11sp</dimen>
+    <dimen name="time_in_chat">4dp</dimen>
+    <dimen name="product_name">12sp</dimen>
+
+    <dimen name="activity_padding">16dp</dimen>
+    <dimen name="placeholder_image">50dp</dimen>
+    <dimen name="placeholder_text_height">8dp</dimen>
+    <dimen name="activity_padding_horizontal">16dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="name">15dp</dimen>
+    <dimen name="chef">12dp</dimen>
+    <dimen name="timestamp">11dp</dimen>
+    <dimen name="description">15dp</dimen>
+    <dimen name="price">13dp</dimen>
+
+</resources>

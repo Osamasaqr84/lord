@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parentCon"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/white_background_square"
+    android:layoutDirection="rtl"
+    android:orientation="horizontal">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinevertical7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinehorizental7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="2"
+        android:padding="5dp"
+        android:text="هاوواي نوقا ه1 بسيببس اانصال"
+        android:textColor="@color/darkgrey"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@+id/guidlinevertical7"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerImages"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="يهخحلتخيل ينمبكلت خل  خيبلتخ خبل خخخلخي بلخهخبل"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toEndOf="@+id/guidlinevertical7"
+        app:layout_constraintTop_toBottomOf="@id/item_name"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        android:id="@+id/tvStoreName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/salefromstor_back"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="متجر الفردوس"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidlinevertical7"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <TextView
+        android:id="@+id/tv_old_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="5dp"
+        android:text="5,657.00 ريال"
+        android:textColor="@color/gray"
+        android:textDirection="rtl"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/guidlinehorizental7"
+        app:layout_constraintWidth_percent="0.25" />
+
+
+    <TextView
+        android:id="@+id/tv_new"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="5,558.00 ريال"
+        android:textColor="@color/black"
+        android:textDirection="rtl"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_old_price"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintStart_toStartOf="@+id/guidlinevertical7"
+        app:layout_constraintTop_toBottomOf="@+id/guidlinehorizental7"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <View
+        android:id="@+id/horspliter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gray"
+        app:layout_constraintHeight_percent="0.002"
+        app:layout_constraintTop_toTopOf="@id/guidlinehorizental7"
+        app:layout_constraintWidth_percent="0.65" />
+
+    <View
+        android:id="@+id/verspliter"
+        android:layout_width="0.2dp"
+        android:layout_height="200dp"
+        android:background="@color/gray"
+        android:layoutDirection="rtl"
+        app:layout_constraintBottom_toBottomOf="@id/parentCon"
+        app:layout_constraintStart_toStartOf="@id/guidlinevertical7"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivProduct"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidlinehorizental7"
+        app:layout_constraintEnd_toEndOf="@+id/guidlinevertical7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/approve" />
+
+
+    <RatingBar
+        android:id="@+id/rates"
+        style="@style/StarRatingBars"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:isIndicator="true"
+        android:rating="5"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_new"
+        app:layout_constraintEnd_toStartOf="@+id/tvRate"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidlinehorizental7"
+        app:layout_constraintWidth_percent="0.21" />
+
+    <TextView
+        android:id="@+id/tvRate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="2737"
+        android:textColor="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_new"
+        app:layout_constraintEnd_toEndOf="@+id/guidlinevertical7"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintWidth_percent="0.09" />
+
+    <ImageView
+        android:id="@+id/imageView_upper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/redtag"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/tvPercentage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="18dp"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:rotation="45"
+        android:text="20%"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_upper"
+        app:layout_constraintEnd_toEndOf="@id/imageView_upper"
+        app:layout_constraintStart_toStartOf="@id/imageView_upper"
+        app:layout_constraintTop_toTopOf="@id/imageView_upper"/>
+
+</android.support.constraint.ConstraintLayout>

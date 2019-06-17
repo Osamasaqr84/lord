@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/productview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layoutDirection="rtl"
+    android:background="@drawable/white_background_square"
+    android:orientation="horizontal">
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinevertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinevertical3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinevertical2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinevertical7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinevertical4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerImages"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:orientation="horizontal"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:id="@+id/spliter"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/gray"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerImages" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:gravity="center|start"
+        android:lines="2"
+        android:text=" غالنبينمسااؤلا لبالغبغ هاوواي نوقا ه1 بسيببس اانصال شريحتيس"
+        android:textColor="@color/darkgrey"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidlinevertical7"
+        app:layout_constraintHeight_percent="0.1"
+
+        app:layout_constraintTop_toBottomOf="@+id/recyclerImages"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        android:id="@+id/tv_old_price"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:text="5,657.00 ريال"
+        android:textColor="@color/gray"
+        android:textDirection="rtl"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toStartOf="@id/guidlinevertical4"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintTop_toBottomOf="@+id/spliter"
+        app:layout_constraintWidth_percent="0.3" />
+
+
+    <TextView
+        android:id="@+id/tv_new"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:text="5,5758.00 ريال"
+        android:textColor="@color/black"
+        android:textDirection="rtl"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_old_price"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@+id/tv_old_price"
+        app:layout_constraintWidth_percent="0.25" />
+
+
+    <RatingBar
+        android:id="@+id/rates"
+        style="@style/StarRatingBars"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+
+        android:layout_marginBottom="8dp"
+        android:isIndicator="true"
+        android:rating="5"
+        app:layout_constraintBottom_toTopOf="@+id/guide8"
+        app:layout_constraintStart_toStartOf="@id/guidlinevertical3"
+        app:layout_constraintTop_toBottomOf="@+id/item_name" />
+
+    <TextView
+        android:id="@+id/tvRate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="2737"
+        android:textColor="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/guide8"
+        app:layout_constraintEnd_toStartOf="@+id/rates"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintStart_toStartOf="@+id/guidlinevertical7"
+        app:layout_constraintTop_toBottomOf="@+id/item_name"
+        app:layout_constraintWidth_percent="0.1" />
+
+
+    <TextView
+        android:id="@+id/tvStoreName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+
+        android:background="@drawable/salefromstor_back"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="متجر الفردوس"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/guide8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_new"
+        app:layout_constraintWidth_percent="0.4" />
+
+
+    <RelativeLayout
+        android:id="@+id/addtoCart"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/addtocart_back"
+        android:drawableStart="@drawable/cart"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        app:layout_constraintWidth_percent="0.5">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="7dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/addtocart"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/ivSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/title"
+            android:src="@drawable/cart" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="center|start"
+        android:text="يهخحلتخيل ينمبكلت خل  خيبلتخ خبل خخخلخي بلخهخبل"
+        android:textColor="@color/red"
+        android:textSize="13sp"
+        android:textStyle="bold"
+
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guide8"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <ImageView
+        android:id="@+id/imageView_upper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/redtag"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/tvPercentage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:rotation="45"
+        android:text="20%"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintStart_toStartOf="@id/imageView_upper"
+        app:layout_constraintTop_toTopOf="@id/imageView_upper"
+        app:layout_constraintEnd_toEndOf="@id/imageView_upper"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_upper"/>
+
+</android.support.constraint.ConstraintLayout>

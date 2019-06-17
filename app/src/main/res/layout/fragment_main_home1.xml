@@ -1,0 +1,115 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_slider"
+        android:layout_width="match_parent"
+        app:layout_constraintHeight_percent="0.40"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_dots"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/vp_slider"
+        android:orientation="horizontal"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vp_slider"
+        android:layout_below="@+id/slider">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/choice_text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginLeft="18dp"
+                android:textColor="@color/gray"
+                android:layout_marginTop="12dp"
+                android:text="اختر حسب القسم "/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/choice_text_title"
+                app:layoutManager="LinearLayoutManager"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="7dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/depatrecylerview">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/morerate_text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/depatrecylerview"
+                android:layout_marginRight="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/gray"
+                android:text="تصفح الافضل تقييما"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="LinearLayoutManager"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/morerate_text_title"
+                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:id="@+id/morraterecylerview">
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/offer_text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/morraterecylerview"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginLeft="18dp"
+                android:textColor="@color/gray"
+                android:text="تصفح حسب الفئة"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="LinearLayoutManager"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/offer_text_title"
+                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:id="@+id/categryrecylerview">
+            </android.support.v7.widget.RecyclerView>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

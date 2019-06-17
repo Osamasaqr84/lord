@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/settings" >
+        <menu>
+
+            <item
+                android:id="@+id/lang_change"
+                android:title="@string/lang"
+                android:icon="@drawable/ic_action_lang"
+                />
+
+            <item
+                android:id="@+id/login"
+                android:title="@string/logintitle"
+                android:icon="@drawable/ic_action_lang"
+                />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_home3"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+  >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/header_for_myccount"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="12dp"
+            android:layout_margin="7dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/linear_background_for_totalbalance"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" اجمالي الرصيد : "
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 540 "
+                android:layout_marginStart="5dp"
+                android:textSize="16dp"
+                android:textColor="@color/text_numbers"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ريال سعودي "
+                android:layout_marginStart="5dp"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <include layout="@layout/first_card_in_myaccount"/>
+        <include layout="@layout/second_card_in_myaccount" />
+        <include layout="@layout/third_card_in_myaccount"  />
+        <include layout="@layout/fourth_card_in_myaccount"/>
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:text="@string/orderdetails"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_gravity="start"
+            android:background="@drawable/save_back"
+            android:padding="2dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

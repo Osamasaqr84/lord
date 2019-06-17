@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:src="@drawable/lineview"
+            />
+        <LinearLayout
+            android:id="@+id/head1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layoutDirection="rtl"
+            android:weightSum="7">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="23dp"
+                android:layout_weight="2.5"
+                android:layout_gravity="center"
+                android:src="@drawable/view1"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="طلباتي "
+                android:gravity="center_horizontal"
+                android:textSize="16dp"
+                android:layout_weight="2"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="23dp"
+                android:layout_weight="2.5"
+                android:layout_gravity="center"
+                android:src="@drawable/view2"
+                />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:src="@drawable/lineview"
+            />
+
+        <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/recylerview">
+
+    </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

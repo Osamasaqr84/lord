@@ -1,0 +1,97 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <include layout="@layout/lord_header"
+            android:id="@+id/header"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/header2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="7dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/linear_background_for_subcat"
+            app:layout_constraintTop_toBottomOf="@+id/header" >
+
+
+            <ImageView
+                android:id="@+id/menu"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/order"
+                />
+                <TextView
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/menu"
+                    app:layout_constraintTop_toTopOf="@+id/menu"
+                    android:layout_marginStart="5dp"
+                    android:text="3"
+                    android:gravity="center"
+                    android:textSize="12dp"
+                    android:textColor="@color/white"
+                    />
+
+            <TextView
+                android:id="@+id/productcounttext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="لديك الان 3 منتجات بالسلة"
+                android:maxLines="2"
+                android:ellipsize="end"
+                app:layout_constraintStart_toEndOf="@id/menu"
+                app:layout_constraintEnd_toStartOf="@id/sale"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/text_numbers"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/sale"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:text="شراء"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                app:layout_constraintWidth_percent="0.3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/addtocart_back"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/header2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/recylerview">
+
+    </android.support.v7.widget.RecyclerView>
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>
+

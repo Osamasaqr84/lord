@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    tools:context=".presentation.screens.home.HomeActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/parashot_header_two"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintWidth_percent="0.95" />
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintHeight_percent="0.2"
+        android:src="@drawable/bizza"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="90dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.18"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:src="@drawable/pizzalogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <TextView
+        android:id="@+id/store_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/back2_resturant"
+        android:gravity="center"
+        app:layout_constraintHeight_percent="0.05"
+        android:text="PizzHut"
+        android:elevation="15dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/item_img" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/store_name"
+        android:textSize="12dp"
+        android:lines="3"
+        android:ellipsize="end"
+        android:layout_marginStart="7dp"
+        android:text="متجر متخصصمتجر متخصصمتجر متخصصمتجر متخصصمتجر متخصصمتجر
+       متخصصمتجر متخصصمتجر متخصصمتجر متخصص "/>
+
+
+    <include layout="@layout/first_cart_in_make_order"
+        android:id="@+id/firstcart"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintHeight_percent="0.1"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        />
+
+
+    <include layout="@layout/second_cart_in_make_order"
+        android:layout_width="match_parent"
+        android:id="@+id/secondcart"
+        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/firstcart"
+        />
+
+
+    <EditText
+        android:id="@+id/order_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:textSize="12dp"
+        android:hint="اكتب هنا طلبك"
+        app:layout_constraintTop_toBottomOf="@+id/secondcart"
+        app:layout_constraintBottom_toTopOf="@+id/confirm"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/edit_background_in_confirm_order"/>
+
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.06"
+            android:background="@drawable/confirm_order_back"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            android:lines="1"
+            android:text="تأكيد الطلب"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/order_details"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,94 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_home3"
+    android:orientation="vertical">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinevertical7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlinevertical9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.design.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:singleSelection="true">
+
+        <android.support.design.chip.Chip
+            android:id="@+id/chipOffers"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:checked="true"
+            android:text="عروض"
+            android:textAlignment="center"
+            android:textColor="@drawable/text_color_chip"
+            app:chipBackgroundColor="@drawable/bg_chip_state_list"
+            app:chipCornerRadius="10dp"
+            app:chipStrokeColor="@color/purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:rippleColor="@color/purple" />
+
+        <android.support.design.chip.Chip
+            android:id="@+id/chipDeals"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:text="صفقات"
+            android:textAlignment="center"
+            android:textColor="@drawable/text_color_chip"
+            app:chipBackgroundColor="@drawable/bg_chip_state_list"
+            app:chipCornerRadius="10dp"
+            app:chipStrokeColor="@color/purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:rippleColor="@color/purple" />
+    </android.support.design.chip.ChipGroup>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="8dp"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+    <FrameLayout
+        android:id="@+id/progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>
