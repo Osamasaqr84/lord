@@ -187,5 +187,6 @@
     <string name="call">اتصل بنا</string>
     <string name="mail">ارسل بريد الكتروني</string>
     <string name="contcact">طرق التواصل</string>
+    <string name="gotoorder" type="id">الذهاب للطلبات</string>
 
 </resources>

@@ -30,7 +30,7 @@ public class PaymentRepository {
         this.apiService = apiService;
     }
 
-    public void addOrder(List<ProductModel> ProductModels, MutableLiveData<Boolean> saveResultLiveData, MutableLiveData<Throwable> errorLiveData) {
+    public void addOrder(List<ProductModel> ProductModels,MutableLiveData<Boolean> saveResultLiveData,MutableLiveData<Throwable> errorLiveData) {
 
         apiService.makeOrderProduct(ProductModels).enqueue(new Callback<ResponseBody>() {
             @Override
@@ -42,13 +42,9 @@ public class PaymentRepository {
                         }
                     }
                     else {
-                        // TODO: return error
-                        if (errorLiveData != null) {
-                            errorLiveData.postValue(new Exception());
+                        if (saveResultLiveData != null) {
+                            saveResultLiveData.postValue(false);
                         }
-                    }
-                    if (errorLiveData != null) {
-                        errorLiveData.postValue(new Exception());
                     }
                 }
             }

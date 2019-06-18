@@ -73,6 +73,8 @@ public class RateFragment extends Fragment {
         ratingViewModel = ViewModelProviders.of(this, getViewModelFactory()).get(RatingViewModel.class);
 
         name.setText(productOrDelivery.getName());
+        ordernum.setText(" طلب رقم : "+" "+productOrDelivery.getOrdernumber());
+
         Glide.with(getActivity()).load(productOrDelivery.getImagepath()).into(imageView);
 
 

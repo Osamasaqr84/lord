@@ -21,7 +21,7 @@ public class ProductModel {
     @Expose
     private int product_id;
 
-    @SerializedName("store_address")
+    @SerializedName(" ")
     @Expose
     private String address;
 

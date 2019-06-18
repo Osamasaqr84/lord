@@ -53,7 +53,7 @@ public class MyOrderForAdminAdapter extends RecyclerView.Adapter<MyOrderForAdmin
             layoutInflater = LayoutInflater.from(parent.getContext());
         }
 
-         MyOrdersForAdminBinding = DataBindingUtil.inflate(layoutInflater, R.layout.myorder_adapter_item_for_admin, parent, false);
+        MyOrdersForAdminBinding = DataBindingUtil.inflate(layoutInflater, R.layout.myorder_adapter_item_for_admin, parent, false);
 
         return new CustomView(MyOrdersForAdminBinding);
     }
@@ -62,10 +62,10 @@ public class MyOrderForAdminAdapter extends RecyclerView.Adapter<MyOrderForAdmin
     public void onBindViewHolder(@NonNull CustomView holder, int position) {
 
         MyOrderViewModel myOrderViewModel = new MyOrderViewModel();
+        try {
 
-
-        if (orderData.get(position).getOrder_status().matches("0"))
-            holder.MyOrdersForAdminBinding.accept.setVisibility(View.VISIBLE);
+            if (orderData.get(position).getOrder_status().matches("0"))
+                holder.MyOrdersForAdminBinding.accept.setVisibility(View.VISIBLE);
 
             if (orderData.get(position).getPhoto() != null)
                 myOrderViewModel.setImagePath("http://parashot.codesroots.com/library/orderphoto/" + orderData.get(position).getPhoto());
@@ -76,83 +76,75 @@ public class MyOrderForAdminAdapter extends RecyclerView.Adapter<MyOrderForAdmin
             myOrderViewModel.setStorenamevalue(orderData.get(position).getStorename());
 
 
-        if (orderData.get(position).getRate()>0)
-        {
-            myOrderViewModel.setRatestart(orderData.get(position).getRate());
-        }
+            if (orderData.get(position).getRate() > 0) {
+                myOrderViewModel.setRatestart(orderData.get(position).getRate());
+            } else {
+                if (orderData.get(position).getOrderdetails().size() > 0) {
+                    myOrderViewModel.setName(orderData.get(position).getOrderdetails().get(0).getProduct().getName());
+                    myOrderViewModel.setItem_price(orderData.get(position).getOrderdetails().get(0).getProduct().getPrice() + " ريال ");
+                }
+                try {
+                    if (orderData.get(position).getOrderdetails().get(0).getProduct().getTotal_rating() != null) {
+                        if (orderData.get(position).getOrderdetails().get(0).getProduct().getTotal_rating().size() > 0) {
+                            myOrderViewModel.setRatecount("(" + orderData.get(position).getOrderdetails().get(0).getProduct().getTotal_rating().get(0).getCount() + ")");
+                            myOrderViewModel.setRatestart(orderData.get(position).getOrderdetails().get(0).getProduct().getTotal_rating().get(0).getStars());
+                        } else
+                            myOrderViewModel.setRatecount("(0)");
 
-        else {
-            if (orderData.get(position).getOrderdetails().size() > 0) {
-                myOrderViewModel.setName(orderData.get(position).getOrderdetails().get(0).getProduct().getName());
-                myOrderViewModel.setItem_price(orderData.get(position).getOrderdetails().get(0).getProduct().getPrice() + " ريال ");
-            }
-            try {
-                if (orderData.get(position).getOrderdetails().get(0).getProduct().getTotal_rating() != null) {
-                    if (orderData.get(position).getOrderdetails().get(0).getProduct().getTotal_rating().size() > 0) {
-                        myOrderViewModel.setRatecount("(" + orderData.get(position).getOrderdetails().get(0).getProduct().getTotal_rating().get(0).getCount() + ")");
-                        myOrderViewModel.setRatestart(orderData.get(position).getOrderdetails().get(0).getProduct().getTotal_rating().get(0).getStars());
                     } else
                         myOrderViewModel.setRatecount("(0)");
 
-                } else
-                    myOrderViewModel.setRatecount("(0)");
-
-                if (orderData.get(position).getOrderdetails().size() > 0) {
-                    if (orderData.get(position).getOrderdetails().get(0).getProduct().getProductphotos() != null)
-                        myOrderViewModel.setImagePath(orderData.get(position).getOrderdetails().get(0).getProduct().getProductphotos().get(0).getPhoto());
+                    if (orderData.get(position).getOrderdetails().size() > 0) {
+                        if (orderData.get(position).getOrderdetails().get(0).getProduct().getProductphotos() != null)
+                            myOrderViewModel.setImagePath(orderData.get(position).getOrderdetails().get(0).getProduct().getProductphotos().get(0).getPhoto());
+                    }
+                } catch (Exception e) {
+                    Log.d("fg", e.getMessage());
                 }
-            } catch (Exception e) {
-                Log.d("fg", e.getMessage());
             }
 
-        }
+            if (orderData.get(position).getSmallstore() != null) {
+                if (!orderData.get(position).getSmallstore().getName().matches(""))
+                    myOrderViewModel.setStorenamevalue(orderData.get(position).getSmallstore().getName());
+            }
 
-
-        if (orderData.get(position).getSmallstore() != null)
-        {
-            if (!orderData.get(position).getSmallstore().getName().matches(""))
-                myOrderViewModel.setStorenamevalue(orderData.get(position).getSmallstore().getName());
-        }
-
-        if (orderData.get(position).getDelivry() != null) {
-            if (!orderData.get(position).getDelivry().getName().matches(""))
-                myOrderViewModel.setCapitainnamevalue(orderData.get(position).getDelivry().getName());
-            else
+            if (orderData.get(position).getDelivry() != null) {
+                if (!orderData.get(position).getDelivry().getName().matches(""))
+                    myOrderViewModel.setCapitainnamevalue(orderData.get(position).getDelivry().getName());
+                else
+                    myOrderViewModel.setCapitainnamevalue(context.getString(R.string.nodelivery));
+            } else
                 myOrderViewModel.setCapitainnamevalue(context.getString(R.string.nodelivery));
+
+            if (orderData.get(position).getOrder_status() != null)
+                myOrderViewModel.setOrderstatuesvalue(orderData.get(position).getOrder_status());
+
+            if (orderData.get(position).getCreated() != null)
+                myOrderViewModel.setDateValue(getdate(orderData.get(position).getCreated()));
+        } catch (Exception e) {
         }
-        else
-            myOrderViewModel.setCapitainnamevalue(context.getString(R.string.nodelivery));
-
-        if (orderData.get(position).getOrder_status()!=null)
-            myOrderViewModel.setOrderstatuesvalue(orderData.get(position).getOrder_status());
-
-        if (orderData.get(position).getCreated()!=null)
-            myOrderViewModel.setDateValue(getdate(orderData.get(position).getCreated()));
-
-
         holder.bind(myOrderViewModel);
 
         holder.MyOrdersForAdminBinding.calluser.setOnClickListener(v ->
         {
-            if (orderData.get(position).getSmallstore()!=null) {
+            if (orderData.get(position).getSmallstore() != null) {
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.fromParts("tel",orderData.get(position).getSmallstore().getPhone(),null));
+                callIntent.setData(Uri.fromParts("tel", orderData.get(position).getSmallstore().getPhone(), null));
 
                 if (ActivityCompat.checkSelfPermission(context,
                         Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     return;
                 }
                 context.startActivity(callIntent);
-            }
-            else
-                Toast.makeText(context,"رقم الهاتف غير متوفر",Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(context, "رقم الهاتف غير متوفر", Toast.LENGTH_SHORT).show();
         });
 
 
         holder.itemView.setOnClickListener(v -> {
             Fragment fragment = new ProductsInsideOrderFragment();
             Bundle bundle = new Bundle();
-            bundle.putSerializable("allProduct" , (Serializable) orderData.get(position).getOrderdetails());
+            bundle.putSerializable("allProduct", (Serializable) orderData.get(position).getOrderdetails());
             fragment.setArguments(bundle);
             ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, fragment).addToBackStack(null).commit();
 
@@ -161,7 +153,7 @@ public class MyOrderForAdminAdapter extends RecyclerView.Adapter<MyOrderForAdmin
 
         holder.MyOrdersForAdminBinding.accept.setOnClickListener(v ->
         {
-            MyOrderViewModel1.editorder(orderData.get(position).getId(),1);
+            MyOrderViewModel1.editorder(orderData.get(position).getId(), 1);
             holder.MyOrdersForAdminBinding.accept.setVisibility(View.GONE);
 
         });
@@ -169,17 +161,16 @@ public class MyOrderForAdminAdapter extends RecyclerView.Adapter<MyOrderForAdmin
         holder.MyOrdersForAdminBinding.storlocation.setOnClickListener(v ->
         {
             Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                    Uri.parse("geo:0,0?q=" + orderData.get(position).getSmallstore().getLatitude() + "," +orderData.get(position).getSmallstore().getLongitude()));
+                    Uri.parse("geo:0,0?q=" + orderData.get(position).getSmallstore().getLatitude() + "," + orderData.get(position).getSmallstore().getLongitude()));
             context.startActivity(intent);
         });
 
         holder.MyOrdersForAdminBinding.userlocation.setOnClickListener(v ->
         {
             Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                    Uri.parse("geo:0,0?q=" + orderData.get(position).getUser().getLat() + "," +orderData.get(position).getUser().getLongX()));
+                    Uri.parse("geo:0,0?q=" + orderData.get(position).getUser().getLat() + "," + orderData.get(position).getUser().getLongX()));
             context.startActivity(intent);
         });
-
     }
 
     private String getdate(String date) {
@@ -195,7 +186,6 @@ public class MyOrderForAdminAdapter extends RecyclerView.Adapter<MyOrderForAdmin
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 

@@ -96,6 +96,8 @@ public class PaymentFragment extends Fragment {
                     Toast.makeText(getActivity(), getText(R.string.erroroccur), Toast.LENGTH_SHORT).show();
                 }
         );
+
+
         return view;
     }
 
@@ -103,5 +105,4 @@ public class PaymentFragment extends Fragment {
     private ViewModelProvider.Factory getViewModelFactory() {
         return new AllStoresViewModelFactory(getActivity().getApplication());
     }
-
 }

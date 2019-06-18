@@ -2,7 +2,10 @@ package com.codesroots.hossam.lordApp.presentation.screens.home.categoryFragment
 
 import android.content.Context;
 import android.graphics.Paint;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -13,6 +16,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.codesroots.hossam.lordApp.entities.BestOffers;
 import com.codesroots.hossam.lordApp.R;
+import com.codesroots.hossam.lordApp.presentation.screens.home.userCartFragment.UserCartFragment;
+
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -57,23 +63,22 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.ViewHolder
                 .into(holder.item_img);
 
         holder.name.setText(data.get(position).getProduct().getName());
-        holder.oldprice.setText(data.get(position).getProduct().getLast_price()+"ريال");
-        holder.newprice.setText(data.get(position).getProduct().getPrice()+"ريال");
-      //  holder.storename.setText(data.get(position).getProduct().getSmallstore().getName());
+        holder.newprice.setText(data.get(position).getProduct().getLast_price()+"ريال");
+        holder.oldprice.setText(data.get(position).getProduct().getPrice()+"ريال");
+        holder.storename.setText(data.get(position).getProduct().getSmallstore().getName());
 
         holder.mView.setOnClickListener(v -> {
 
-//            Fragment userCartFragment = new UserCartFragment();
-//            Bundle args = new Bundle();
-//            args.putInt("store_id", data.get(position).getProduct().getSmallstore_id());
-//            args.putInt("product_id", data.get(position).getProduct().getId());
-//            args.putInt("count", data.get(position).getProduct().getAmount());
-//            args.putFloat("total_price", data.get(position).getProduct().getAmount()* Float.valueOf(data.get(position).getProduct().getLast_price()));
-//            args.putSerializable("product", (Serializable) data.get(position).getProduct());
-//            userCartFragment.setArguments(args);
-//            ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().
-//                    replace(R.id.main_frame, userCartFragment).addToBackStack(null).commit();
-
+            Fragment userCartFragment = new UserCartFragment();
+            Bundle args = new Bundle();
+            args.putInt("store_id", data.get(position).getProduct().getSmallstore_id());
+            args.putInt("product_id", data.get(position).getProduct().getId());
+            args.putInt("count", data.get(position).getProduct().getAmount());
+            args.putFloat("total_price", data.get(position).getProduct().getAmount()* Float.valueOf(data.get(position).getProduct().getLast_price()));
+            args.putSerializable("product", (Serializable) data.get(position).getProduct());
+            userCartFragment.setArguments(args);
+            ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().
+                    replace(R.id.main_frame, userCartFragment).addToBackStack(null).commit();
 
         });
 
@@ -98,7 +103,7 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.ViewHolder
             name =view.findViewById(R.id.item_name);
             oldprice =view.findViewById(R.id.item_oldprice);
             newprice =view.findViewById(R.id.item_newprice);
-            newprice.setPaintFlags(oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG) ;
+            oldprice.setPaintFlags(oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG) ;
 
         }
     }

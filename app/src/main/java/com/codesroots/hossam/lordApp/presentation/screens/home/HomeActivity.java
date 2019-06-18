@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         footer = findViewById(R.id.navigation);
         footer.setOnNavigationItemSelectedListener(this);
         footer.getMenu().findItem(R.id.navigation_home).setChecked(true);
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new MainFragment()).addToBackStack(null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new MainFragment()).commit();
         preferenceHelper = new PreferenceHelper(this);
         check_lang = preferenceHelper.getLanguage();
         favorit.setOnClickListener(this);
@@ -154,7 +154,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
-
 
     ////////////////////Notification
     private void notification() {

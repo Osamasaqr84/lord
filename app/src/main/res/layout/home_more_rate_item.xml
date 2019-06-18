@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -29,7 +27,7 @@
             app:layout_constraintHeight_percent="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/morerate"/>
+            />
 
         <TextView
             android:id="@+id/item_dept"
@@ -42,7 +40,6 @@
             app:layout_constraintStart_toStartOf="parent"
             android:ellipsize="end"
             android:gravity="start"
-            android:text="مطاعم"
             app:layout_constraintTop_toBottomOf="@+id/item_img"
             android:layout_gravity="start" />
 
@@ -54,7 +51,6 @@
             app:layout_constraintHeight_percent="0.15"
             android:ellipsize="end"
             android:layout_marginBottom="3dp"
-            android:text="Hardes-prime visto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_dept"
@@ -63,12 +59,11 @@
 
         <RatingBar
             android:id="@+id/rates"
-            style="@style/StarRatingBars"
+            style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             app:layout_constraintHeight_percent="0.15"
             app:layout_constraintStart_toStartOf="parent"
-            android:rating="5"
             android:layout_marginTop="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_name"
@@ -87,7 +82,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/rates"
             app:layout_constraintTop_toBottomOf="@+id/item_name"
-            android:text="(120)"
+            android:text="()"
             android:textColor="@color/black" />
 
     </android.support.constraint.ConstraintLayout>

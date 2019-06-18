@@ -125,7 +125,6 @@ public interface ApiInterface {
     @POST("orders/androidorder/2.json")
     Call<ResponseBody> makeOrder(
             @Part("orders") List<ProductModel> models,
-
             @Part MultipartBody.Part file
     );
 

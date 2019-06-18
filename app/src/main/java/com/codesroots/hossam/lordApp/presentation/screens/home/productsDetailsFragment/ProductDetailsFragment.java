@@ -177,53 +177,46 @@ public class ProductDetailsFragment extends Fragment {
             Objects.requireNonNull(getActivity()).startActivity(intent);
         });
 
-        ratingBar.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
+        ratingBar.setOnTouchListener((v, event) -> {
 
-                Fragment fragment = new RatesOfProductFragment();
-                Bundle bundle = new Bundle();
-                bundle.putInt("product_id", detailsModel.getData().get(0).getId());
-                fragment.setArguments(bundle);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, fragment).addToBackStack(null).commit();
-                return false;
-            }
+            Fragment fragment = new RatesOfProductFragment();
+            Bundle bundle = new Bundle();
+            bundle.putInt("product_id", detailsModel.getData().get(0).getId());
+            fragment.setArguments(bundle);
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, fragment).addToBackStack(null).commit();
+            return false;
         });
 
-        favorite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (userid > 0) {
-                    if (!productfav)
-                        productDetailsViewModel.AddToFav(userid, detailsModel.getData().get(0).getId(), detailsModel.getData().get(0).getSmallstore_id()
-                                , productDetailsViewModel.productDetailsRepository);
+        favorite.setOnClickListener(v -> {
+            if (userid > 0) {
+                if (!productfav)
+                    productDetailsViewModel.AddToFav(userid, detailsModel.getData().get(0).getId(), detailsModel.getData().get(0).getSmallstore_id()
+                            , productDetailsViewModel.productDetailsRepository);
 
-                    else
-                        productDetailsViewModel.DeleteFav(detailsModel.getData().get(0).getFavourite().get(0).getId()
-                                ,productDetailsViewModel.productDetailsRepository);
-
-
-                    productDetailsViewModel.addToFavoriteLiveData.observe(getActivity(), aBoolean -> {
-                        if (aBoolean) {
-                            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.addtofavsucces), Toast.LENGTH_SHORT).show();
-                            favorite.setImageResource(R.drawable.favoried);
-                        } else
-                            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.erroroccur), Toast.LENGTH_SHORT).show();
-                    });
-
-                    productDetailsViewModel.deleteFromFavoriteLiveData.observe(getActivity(), aBoolean -> {
-                        if (aBoolean) {
-                            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.deletefromfavsucces), Toast.LENGTH_SHORT).show();
-                            favorite.setImageResource(R.drawable.favicon);
-                        } else
-                            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.erroroccur), Toast.LENGTH_SHORT).show();
-
-                    });
-                }
                 else
-                    Snackbar.make(v,getText(R.string.loginfirst),Snackbar.LENGTH_LONG).show();
-            }
+                    productDetailsViewModel.DeleteFav(detailsModel.getData().get(0).getFavourite().get(0).getId()
+                            ,productDetailsViewModel.productDetailsRepository);
 
+
+                productDetailsViewModel.addToFavoriteLiveData.observe(getActivity(), aBoolean -> {
+                    if (aBoolean) {
+                        Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.addtofavsucces), Toast.LENGTH_SHORT).show();
+                        favorite.setImageResource(R.drawable.favoried);
+                    } else
+                        Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.erroroccur), Toast.LENGTH_SHORT).show();
+                });
+
+                productDetailsViewModel.deleteFromFavoriteLiveData.observe(getActivity(), aBoolean -> {
+                    if (aBoolean) {
+                        Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.deletefromfavsucces), Toast.LENGTH_SHORT).show();
+                        favorite.setImageResource(R.drawable.favicon);
+                    } else
+                        Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.erroroccur), Toast.LENGTH_SHORT).show();
+
+                });
+            }
+            else
+                Snackbar.make(v,getText(R.string.loginfirst),Snackbar.LENGTH_LONG).show();
         });
         addtoCart.setOnClickListener(v -> {
 
