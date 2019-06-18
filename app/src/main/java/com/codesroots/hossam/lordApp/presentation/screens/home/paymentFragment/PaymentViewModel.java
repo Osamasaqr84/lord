@@ -49,6 +49,7 @@ public class PaymentViewModel extends ViewModel {
                 loading.postValue(false);
             }
         });
+
         this.paymentRepository = paymentRepository;
     }
 
