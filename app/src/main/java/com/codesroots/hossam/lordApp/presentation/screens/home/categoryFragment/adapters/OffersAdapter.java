@@ -2,7 +2,10 @@ package com.codesroots.hossam.lordApp.presentation.screens.home.categoryFragment
 
 import android.content.Context;
 import android.graphics.Paint;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -13,6 +16,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.codesroots.hossam.lordApp.entities.BestOffers;
 import com.codesroots.hossam.lordApp.R;
+import com.codesroots.hossam.lordApp.presentation.screens.home.productsDetailsFragment.ProductDetailsFragment;
+
 import java.util.List;
 
 
@@ -62,6 +67,12 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.ViewHolder
         holder.storename.setText(data.get(position).getProduct().getSmallstore().getName());
 
         holder.mView.setOnClickListener(v -> {
+            Fragment fragment = new ProductDetailsFragment();
+            Bundle bundle =new Bundle();
+            bundle.putInt("store_id",data.get(position).getProduct().getSmallstore_id());
+            bundle.putInt("product_id",data.get(position).getProduct_id());
+            fragment.setArguments(bundle);
+            ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,fragment).addToBackStack(null).commit();
 
 //            Fragment userCartFragment = new UserCartFragment();
 //            Bundle args = new Bundle();

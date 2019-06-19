@@ -6,6 +6,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -63,10 +64,13 @@ public class NotificationsFragment extends Fragment {
 
 
         notificationsViewModel.notificationsMutableLiveData.observe(getActivity(), notifications -> {
-            notificationsAdapter = new NotificationsAdapter(getActivity(), notifications.getData());
-            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-            recyclerView.setAdapter(notificationsAdapter);
-
+            if (notifications.getData().size()>0) {
+                notificationsAdapter = new NotificationsAdapter(getActivity(), notifications.getData());
+                recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+                recyclerView.setAdapter(notificationsAdapter);
+            }
+            else
+                Snackbar.make(view,getText(R.string.nonotifications),Snackbar.LENGTH_SHORT).show();
         });
 
         notificationsViewModel.errorLiveData.observe(this, new Observer<Throwable>() {

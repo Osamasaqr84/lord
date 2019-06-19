@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:gravity="center"
-            android:text="@string/call"
+            android:text="9647726802533"
             android:textColor="@color/white"
             android:textSize="13dp" />
 
@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:gravity="center"
-            android:text="@string/mail"
+            android:text="info@lord.com"
             android:textColor="@color/white"
             android:textSize="13dp" />
 
